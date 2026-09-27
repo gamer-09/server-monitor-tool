@@ -1,0 +1,56 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #0f172a; color: #e2e8f0;
+}
+.container { max-width: 980px; margin: 40px auto; padding: 0 16px; }
+h1 { margin: 0 0 20px; font-size: 24px; }
+
+.controls { background: #111827; border: 1px solid #1f2937; padding: 12px; border-radius: 10px; margin-bottom: 16px; }
+.row { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+input[type="password"], input[type="number"], input[type="text"] {
+  background: #0b1220; border: 1px solid #243041; color: #e2e8f0; border-radius: 8px; padding: 10px 12px; min-width: 240px;
+}
+button { background: #2563eb; border: none; color: #fff; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+button.secondary { background: #374151; }
+button.danger, .mini.danger { background: #dc2626; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.status { margin: 12px 0; padding: 10px 12px; border-radius: 8px; background: #0b1220; border: 1px solid #243041; color: #cbd5e1; }
+.status.success { border-color: #10b981; color: #d1fae5; }
+.status.error { border-color: #ef4444; color: #fee2e2; }
+.status.warn { border-color: #f59e0b; color: #fef3c7; }
+.status.info { border-color: #3b82f6; color: #dbeafe; }
+
+ table { width: 100%; border-collapse: collapse; background: #0b1220; border: 1px solid #243041; border-radius: 10px; overflow: hidden; }
+ thead th { text-align: left; background: #0f172a; font-weight: 600; color: #cbd5e1; }
+ th, td { padding: 10px 12px; border-bottom: 1px solid #1f2937; }
+ tbody tr:hover { background: #0f172a; }
+ .muted { color: #94a3b8; text-align: center; }
+ .mini { padding: 6px 10px; font-size: 12px; border-radius: 6px; }
+ .name { font-weight: 600; color: #e5e7eb; }
+
+ /* Responsive adjustments */
+ @media (max-width: 1024px) {
+   .container { max-width: 100%; padding: 0 12px; }
+ }
+
+ @media (max-width: 768px) {
+   h1 { font-size: 20px; }
+   .row { flex-direction: column; gap: 10px; }
+   .row > input[type="password"],
+   .row > input[type="number"],
+   .row > input[type="text"],
+   .row > button { width: 100%; }
+   th, td { padding: 8px; }
+   /* Allow horizontal scrolling for the table on small screens */
+   table { display: block; overflow-x: auto; white-space: nowrap; }
+ }
+
+ @media (max-width: 480px) {
+   .container { margin: 24px auto; }
+   h1 { font-size: 18px; }
+   .status { font-size: 14px; }
+   button { padding: 10px 12px; }
+   input[type="password"], input[type="number"], input[type="text"] { min-width: 0; }
+ }

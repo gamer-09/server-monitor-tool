@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>koi_12 Server Manager</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>koi_12 Server Manager</h1>
+    <div class="controls">
+      <div class="row">
+        <input id="token" type="password" placeholder="Admin token (optional)">
+        <button id="toggleToken" class="secondary">Show</button>
+        <button id="saveToken">Save Token</button>
+        <button id="clearToken" class="secondary">Clear Token</button>
+        <button id="refresh">Refresh</button>
+      </div>
+      <div class="row">
+        <input id="port" type="number" min="1" max="65535" placeholder="Port to kill">
+        <button id="killPort" class="danger">Kill by Port</button>
+        <button id="killSelected" class="danger">Kill Selected</button>
+      </div>
+    </div>
+    <div id="status" class="status"></div>
+    <table id="table">
+      <thead>
+        <tr>
+          <th><input id="selectAll" type="checkbox"></th>
+          <th>Name</th>
+          <th>PID</th>
+          <th>Protocol</th>
+          <th>Address</th>
+          <th>Port</th>
+          <th>Label</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
